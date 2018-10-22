@@ -26,13 +26,13 @@ public class HelloController {
     private TestService testService;
 
     @RequestMapping("/hello")
-    @HystrixCommand(groupKey = "dataGroup", fallbackMethod = "findOrderFallback", commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = lHystrixToutMs_60),}, threadPoolProperties = {@HystrixProperty(name = "coreSize", value = coreSize),})
+//    @HystrixCommand(groupKey = "dataGroup", fallbackMethod = "findOrderFallback", commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = lHystrixToutMs_60),}, threadPoolProperties = {@HystrixProperty(name = "coreSize", value = coreSize),})
     public String index(@RequestParam String name) {
-        try {
+        /*try {
             Thread.sleep(7000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         if(name.equals("uuu")){
             throw new RuntimeException();
         }
